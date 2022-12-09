@@ -1,4 +1,4 @@
-import { useNavigate  } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import { MdEmail, MdLock } from 'react-icons/md'
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
@@ -45,7 +45,7 @@ const Login = () => {
             </Column>
             <Column>
                 <Wrapper>
-                <TitleLogin>Faça seu cadastro</TitleLogin>
+                <TitleLogin>Faça seu login</TitleLogin>
                 <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Input placeholder="E-mail" leftIcon={<MdEmail />} name="email"  control={control} />
@@ -56,7 +56,9 @@ const Login = () => {
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
-                    <CriarText>Criar Conta</CriarText>
+                    <Link to='/register'>
+                        <CriarText>Criar Conta</CriarText>
+                    </Link>
                 </Row>
                 </Wrapper>
             </Column>
